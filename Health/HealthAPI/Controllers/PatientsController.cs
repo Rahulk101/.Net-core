@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HealthAPI.Data;
 using HealthAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace HealthAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("HealthPolicy")]
     public class PatientsController : ControllerBase
     {
         private readonly HealthContext _context;
@@ -90,6 +92,20 @@ namespace HealthAPI.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPatient", new { id = patient.PatientId }, patient);
+        }
+
+        // GET api/patients/3/medication
+        [HttpGet("{id:int}/medication")]
+        public async Task<IActionResult> GetMedications(int id)
+        {
+            var patient = await _context.Patients
+              .Include(m => m.Medications)
+              .FirstOrDefaultAsync(i => i.PatientId == id);
+
+            if (patient == null)
+                return NotFound();
+
+            return Ok(patient.Medications);
         }
 
         // DELETE: api/Patients/5
