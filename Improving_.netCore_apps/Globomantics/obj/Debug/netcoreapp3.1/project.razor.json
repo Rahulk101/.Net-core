@@ -20899,6 +20899,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\.Net core\\Improving_.netCore_apps\\Globomantics\\Views\\Promotion\\Index.cshtml",
+      "TargetPath": "Views\\Promotion\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\.Net core\\Improving_.netCore_apps\\Globomantics\\Views\\Shared\\Components\\MortgageRates\\Default.cshtml",
       "TargetPath": "Views\\Shared\\Components\\MortgageRates\\Default.cshtml",
       "FileKind": "mvc"
@@ -20906,6 +20911,11 @@
     {
       "FilePath": "d:\\.Net core\\Improving_.netCore_apps\\Globomantics\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\.Net core\\Improving_.netCore_apps\\Globomantics\\Views\\Home\\MobileIndex.cshtml",
+      "TargetPath": "Views\\Home\\MobileIndex.cshtml",
       "FileKind": "mvc"
     },
     {
